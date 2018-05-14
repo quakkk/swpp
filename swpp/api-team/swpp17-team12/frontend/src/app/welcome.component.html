@@ -1,0 +1,36 @@
+<div class="container">
+  <div class=" rounded align-self-center welcome_box">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="join-tab" data-toggle="tab" href="#join" role="tab" aria-controls="join" aria-selected="false">Join</a>
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+        <div class="panel border rounded">
+          <div>
+            <input placeholder="Username" [(ngModel)]="signin_info.username">
+            <input type="password" placeholder="Password" [(ngModel)]="signin_info.password">
+          </div>
+          <button type="button" class="btn btn-primary" (click)="signin()">Sign In</button>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="join" role="tabpanel" aria-labelledby="join-tab">
+        <div class="panel border rounded">
+          <div>
+            <input placeholder="Username" [(ngModel)]="signup_info.username">
+            <input placeholder="Email" [(ngModel)]="signup_info.email">
+            <input type="password" placeholder="Password" [(ngModel)]="signup_info.password">
+          </div>
+          <button type="button" class="btn btn-primary" (click)="signup()">Sign Up</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="border border-bottom-0">
+    ADFREE REVIEW by TEAM 12
+  </footer>
+</div>

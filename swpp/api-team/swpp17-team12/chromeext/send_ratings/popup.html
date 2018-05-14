@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>AdfreeReview</title>
+  <script src="popup.js"></script>
+  <link rel="stylesheet" href="popup.css">
+  <link rel="stylesheet" type="text/css" href="starability-minified/starability-all.min.css"/>
+
+  <!-- django star implementation -->
+  <link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
+  <script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <div class='container'>
+    <form id="score">
+      <h4><strong>[Score of this post]</strong></h4>
+      <small>AdfreeScore: <span id="post_adfreescore"></span>(by <span id="numadfreerating"></span>)<br></small>
+      <small>ContentScore: <span id="post_contentscore"></span>(by <span id="numcontentrating"></span>)<br></small>
+    </form>
+  </div>
+  <div class='container'>
+    <h4><strong>[Rating this post!]</strong></h4>
+    <form>
+      <fieldset class="starability-basic" id="adfree_starrate">
+        <h5>Adfree Rating</h5>
+        <input type="radio" id="no-rate" class="input-no-rate" name="rating" value="0" checked aria-label="No rating." />
+
+        <input type="radio" id="rate1" name="rating" value="1" />
+        <label for="rate1">1 star.</label>
+
+        <input type="radio" id="rate2" name="rating" value="2" />
+        <label for="rate2">2 stars.</label>
+
+        <input type="radio" id="rate3" name="rating" value="3" />
+        <label for="rate3">3 stars.</label>
+
+        <input type="radio" id="rate4" name="rating" value="4" />
+        <label for="rate4">4 stars.</label>
+
+        <input type="radio" id="rate5" name="rating" value="5" />
+        <label for="rate5">5 stars.</label>
+      </fieldset>
+    </form>
+    <form>
+      <fieldset class="starability-slot" id="content_starrate">
+        <h5>Content Rating</h5>
+        <input type="radio" id="no-rate" class="input-no-rate" name="rating" value="0" checked aria-label="No rating." />
+
+        <input type="radio" id="slot-rate1" name="rating" value="1" />
+        <label for="slot-rate1">1 star.</label>
+
+        <input type="radio" id="slot-rate2" name="rating" value="2" />
+        <label for="slot-rate2">2 stars.</label>
+
+        <input type="radio" id="slot-rate3" name="rating" value="3" />
+        <label for="slot-rate3">3 stars.</label>
+
+        <input type="radio" id="slot-rate4" name="rating" value="4" />
+        <label for="slot-rate4">4 stars.</label>
+
+        <input type="radio" id="slot-rate5" name="rating" value="5" />
+        <label for="slot-rate5">5 stars.</label>
+
+        <span class="starability-focus-ring"></span>
+      </fieldset>
+    </form>
+    <form>
+      <h5>Comment</h5>
+      <textarea rows="4" cols="30" name="Comment" id="Comment" form="usrform" placeholder="Type your comment here"></textarea>
+    </form>
+    <input type="submit" id="SubmitButton" />
+  </div>
+  <div class="wrapper">
+    <button id="sign_in" type="button" class="btn btn-default navbar-btn">Sign in</button>
+    <button id="sign_up" type="button" class="btn btn-default navbar-btn">Sign Up</button>
+  </div>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  -->
+</body>
+
+</html>

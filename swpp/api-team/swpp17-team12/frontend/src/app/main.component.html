@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <div class="container">
+      <!-- Jumbotron -->
+      <div class="jumbotron">
+        <h1>Adfree Review!</h1>
+        <p class="lead">AdfreeReview is a service for internet users who search internet for online reviews, which consists of a Chrome extension and a website. Users can check scores of blog reviews and rate the posts' adfree-ness and helpfulness with Chrome extension. Website curates the top adfree-ness blogs and posts based on the scores users rated and each user's preference. By showing blog review scores rated by other users on the top of the blog review, users can decide whether to consult the review or not.</p>
+        <p><a class="btn btn-lg btn-success" href="#" role="button">Get started today</a></p>
+      </div>
+
+      <!-- Example row of columns -->
+      <h1>Latest Ratings</h1>
+      <div class="row">
+        <div class="col-lg-4" 
+        *ngFor="let rating of latest_ratings">
+          <h2>{{rating.id}}. post : {{rating.post_id}}</h2>
+        	 <span class="text-muted">adfree score : {{rating.adfree_score}}</span><br> 
+              <span class="text-muted">content score : {{rating.content_score}}</span><br>
+              <span class="text-muted">comment : {{rating.comment}}</span><br>
+              <span class="text-muted">time stamp : {{rating.time_stamp}}</span><br>
+              
+              user id : {{rating.user_id}}
+         
+        </div>
+      </div>
+
+	<br><br>
+
+	<h1>Top Posts</h1>
+      <div class="row">
+        <div class="col-lg-4" 
+        *ngFor="let post of top_posts">
+          <h2>{{post.id}}. {{post.title}}</h2>
+	     <span class="text-muted">adfree score : {{post.adfree_score}}</span> <br>
+          <span class="text-muted">content score : {{post.content_score}}</span><br>
+          <span class="text-muted">total score : {{post.total_score}}</span><br>              
+          <p><a class="btn btn-primary" href={{post.url}} role="button">Goto post &raquo;</a></p>
+        </div>
+      </div>
+
+      <!-- Site footer -->
+      <footer class="footer">
+        <p>&copy; SWPP team12</p>
+      </footer>
+
+    </div> <!-- /container -->
+    
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+
+</html>

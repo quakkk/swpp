@@ -1,0 +1,22 @@
+body {
+  width: 400px;
+  height: 300px;
+}
+
+.wrapper {
+    text-align: center;
+}
+
+button {
+  margin: auto;
+  width: 25%;
+  text-align: center;
+  color: white;
+  background-color: grey;
+}
+
+button:hover {
+  background-color: #ff3300;
+  cursor: pointer;
+
+}

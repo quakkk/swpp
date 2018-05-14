@@ -1,0 +1,19 @@
+{
+  "name": "AdfreeReview",
+  "description": "Chrome Extension to help you save time when blogging.",
+  "version": "1.0",
+  "icons": {
+    "16":"image/bar_icon-16.png",
+    "32":"image/bar_icon-32.png",
+    "128":"image/bar_icon-128.png"
+  },
+  "permissions": [
+    "tabs", "http://*/*", "https://*/*", "<all_urls>"
+  ],
+  "browser_action": {
+      "default_title": "AdfreeReview",
+      "default_icon": "image/bar_icon.png",
+      "default_popup": "popup.html"
+  },
+  "manifest_version": 2
+}

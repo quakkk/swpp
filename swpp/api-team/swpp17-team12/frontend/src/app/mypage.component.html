@@ -1,0 +1,98 @@
+<div *ngIf="my_info" class="container">
+  <!-- Content here -->
+  <div class="row">
+    <div class="col-md-8">
+      <div class="col-md-12 border rounded left-panel panel my-ratings">
+        <div class="row info">
+          <h3>My Ratings</h3>
+=======
+        <div class="col-md-12">
+          <div class="row info">
+            <h3>My Ratings</h3>
+          </div>
+          <div class="row border rounded rating">
+            <div class="col-md-1 cell-rating">
+              POST
+            </div>
+            <div class="col-md-3 cell-rating">
+              DATE
+            </div>
+            <div class="col-md-2 cell-rating">
+              ADFREE
+            </div>
+            <div class="col-md-2 cell-rating">
+              CONTENT
+            </div>
+            <div class="col-md-4 cell-rating">
+              COMMENT
+            </div>
+          </div>
+          <div *ngFor="let rating of my_ratings" class="row border rounded rating">
+            <div class="col-md-1 cell-rating">
+              {{rating.post_id}}
+            </div>
+            <div class="col-md-3 cell-rating">
+              {{rating.time_stamp.slice(0, 10)}}
+            </div>
+            <div class="col-md-2 cell-rating">
+              {{rating.adfree_score}}
+            </div>
+            <div class="col-md-2 cell-rating">
+              {{rating.content_score}}
+            </div>
+            <div class="col-md-4 cell-rating">
+              {{rating.comment}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="row border rounded right-panel panel my-info">
+        <div class="col-md-12">
+          <div *ngIf="my_info.username" class="row inner">
+            <h3>Hello, {{my_info.username}}!</h3>
+          </div>
+          <div>
+            <img src={{profile}}>
+          </div>
+          <div class="row inner">
+            <h3>{{my_info.score}}pt</h3>
+          </div>
+        </div>
+      </div>
+      <div class="row border rounded right-panel panel setting">
+        <div class="row info">
+          <h3>Settings</h3>
+        </div>
+        <div class="row rounded right-panel info">
+          <div class="col-md-4">
+            <div *ngFor="let i of index_list" class="row cell">
+            <div *ngFor="let i of index_list" class="row cell-setting">
+              {{domains[i].toUpperCase()}}
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div *ngFor="let i of index_list" class="row cell">
+            <div *ngFor="let i of index_list" class="row cell-setting">
+              <div class="word">off</div>
+              <!-- Rounded switch -->
+              <label class="switch">
+                <input type="checkbox" [(ngModel)]=setting[i]>
+                <span class="slider round"></span>
+              </label>
+              <div class="word">on</div>
+            </div>
+          </div>
+        </div>
+        <div class="row info">
+          <button (click)="updateSetting()">Save Setting</button>
+          <button type="button" class="btn btn-primary" (click)="updateSetting()">Save Setting</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="border border-bottom-0">
+    ADFREE REVIEW by TEAM 12
+  </footer>
+</div>

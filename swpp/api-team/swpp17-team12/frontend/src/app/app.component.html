@@ -1,0 +1,9 @@
+<h1>{{title}}</h1>
+<div>
+  <button (click)="router.navigate(['/main'])">Home</button>
+  <button (click)="router.navigate(['/recommend'])">Recommended</button>
+  <button (click)="router.navigate(['/mypage'])">My Page</button>
+  <button (click)="router.navigate(['/welcome'])">Log In or Join</button>
+  <button (click)="signout()">Log Out</button>
+</div>
+<router-outlet></router-outlet>
